@@ -1,0 +1,10 @@
+table,rows,columns,missing_cells,exact_duplicate_rows
+clients,50000,19,0,0
+financial_profiles,50000,15,0,0
+credit_applications,50000,12,0,0
+credit_history,82500,9,0,0
+repayments,600000,10,0,0
+bureau_monthly,300000,8,0,0
+assets,50000,10,0,0
+insurance,50000,7,0,0
+decision_scenarios,50000,12,18009,0

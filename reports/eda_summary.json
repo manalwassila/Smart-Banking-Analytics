@@ -1,0 +1,13 @@
+{
+  "table_principale": "credit_applications",
+  "nombre_lignes": 50000,
+  "nombre_colonnes": 12,
+  "doublons_lignes": 0,
+  "cellules_manquantes": 0,
+  "colonnes_constantes": [],
+  "colonnes_a_examiner_leakage": [],
+  "distribution_TARGET": {
+    "0": 40562,
+    "1": 9438
+  }
+}

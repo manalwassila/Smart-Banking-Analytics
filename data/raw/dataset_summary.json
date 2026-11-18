@@ -1,0 +1,48 @@
+{
+  "clients": 50000,
+  "applications": 50000,
+  "credit_history_rows": 82500,
+  "repayment_rows": 600000,
+  "bureau_monthly_rows": 300000,
+  "target_default_rate_percent": 18.88,
+  "cities": 20,
+  "files": [
+    "clients.csv",
+    "financial_profiles.csv",
+    "credit_applications.csv",
+    "credit_history.csv",
+    "repayments.csv",
+    "bureau_monthly.csv",
+    "README.md",
+    "schema.sql"
+  ],
+  "enrichment_version": "2.0",
+  "new_files": [
+    "assets.csv",
+    "insurance.csv",
+    "decision_scenarios.csv"
+  ],
+  "new_client_columns": [
+    "NUMBER_OF_CHILDREN",
+    "DEPENDENT_CHILDREN",
+    "OTHER_DEPENDENTS",
+    "HAS_FINANCIAL_DEPENDENTS",
+    "FAMILY_RESPONSIBILITY_LEVEL"
+  ],
+  "new_financial_profile_columns": [
+    "MONTHLY_FAMILY_EXPENSES_MAD",
+    "ADDITIONAL_MONTHLY_INCOME_MAD",
+    "HOUSEHOLD_MONTHLY_INCOME_MAD",
+    "TOTAL_MONTHLY_COMMITMENTS_MAD",
+    "DISPOSABLE_INCOME_MAD",
+    "HOUSEHOLD_EXPENSE_RATIO",
+    "SAVINGS_TO_MONTHLY_INCOME"
+  ],
+  "decision_scenarios_rows": 50000,
+  "decision_scenario_counts": {
+    "Acceptation intégrale": 18544,
+    "Rejet": 18009,
+    "Acceptation partielle": 13447
+  },
+  "synthetic_only": true
+}

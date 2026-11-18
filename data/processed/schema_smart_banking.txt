@@ -1,0 +1,138 @@
+
+============================================================
+TABLE : assets
+============================================================
+sk_id_curr : BIGINT
+owns_property : SMALLINT
+number_of_properties : INTEGER
+property_type : VARCHAR(40)
+total_property_value_mad : NUMERIC
+property_fully_paid : SMALLINT
+outstanding_mortgage_mad : NUMERIC
+monthly_rental_income_mad : NUMERIC
+other_financial_assets_mad : NUMERIC
+net_property_value_mad : NUMERIC
+
+============================================================
+TABLE : bureau_monthly
+============================================================
+sk_id_month : BIGINT
+sk_id_curr : BIGINT
+month_date : DATE
+utilization_rate : NUMERIC
+account_balance_mad : NUMERIC
+overdue_amount_mad : NUMERIC
+active_credit_count : INTEGER
+missed_payment_count_12m : INTEGER
+
+============================================================
+TABLE : clients
+============================================================
+sk_id_curr : BIGINT
+age : INTEGER
+gender : VARCHAR(5)
+marital_status : VARCHAR(30)
+education_level : VARCHAR(30)
+city : VARCHAR(50)
+employment_status : VARCHAR(40)
+employment_contract : VARCHAR(40)
+employment_years : NUMERIC(5, 1)
+housing_status : VARCHAR(30)
+household_size : INTEGER
+dependents : INTEGER
+bank_tenure_years : NUMERIC(5, 1)
+account_type : VARCHAR(40)
+number_of_children : INTEGER
+dependent_children : INTEGER
+other_dependents : INTEGER
+has_financial_dependents : SMALLINT
+family_responsibility_level : VARCHAR(20)
+
+============================================================
+TABLE : credit_applications
+============================================================
+sk_id_curr : BIGINT
+application_date : DATE
+credit_type : VARCHAR(40)
+amount_requested_mad : NUMERIC
+credit_term_months : INTEGER
+interest_rate_annual_pct : NUMERIC
+estimated_monthly_installment_mad : NUMERIC
+credit_to_annual_income : NUMERIC
+payment_to_income_ratio : NUMERIC
+debt_to_income_ratio : NUMERIC
+target : SMALLINT
+target_label : VARCHAR(80)
+
+============================================================
+TABLE : credit_history
+============================================================
+sk_id_bureau : BIGINT
+sk_id_curr : BIGINT
+credit_type : VARCHAR(50)
+credit_amount_mad : NUMERIC
+credit_term_months : INTEGER
+credit_start_date : DATE
+credit_status : VARCHAR(50)
+overdue_days_max : INTEGER
+outstanding_balance_mad : NUMERIC
+
+============================================================
+TABLE : decision_scenarios
+============================================================
+sk_id_curr : BIGINT
+demo_risk_score : NUMERIC
+demo_risk_level : VARCHAR(20)
+max_affordable_monthly_installment_mad : NUMERIC
+max_affordable_loan_amount_mad : NUMERIC
+recommended_decision : VARCHAR(40)
+recommended_financing_ratio : NUMERIC
+recommended_loan_amount_mad : NUMERIC
+proposed_annual_interest_rate_pct : NUMERIC
+estimated_new_monthly_installment_mad : NUMERIC
+human_validation_status : VARCHAR(50)
+policy_scenario_version : VARCHAR(40)
+
+============================================================
+TABLE : financial_profiles
+============================================================
+sk_id_curr : BIGINT
+monthly_income_mad : NUMERIC
+monthly_expenses_mad : NUMERIC
+existing_debt_mad : NUMERIC
+other_monthly_payments_mad : NUMERIC
+savings_mad : NUMERIC
+avg_account_balance_mad : NUMERIC
+income_source : VARCHAR(50)
+monthly_family_expenses_mad : NUMERIC
+additional_monthly_income_mad : NUMERIC
+household_monthly_income_mad : NUMERIC
+total_monthly_commitments_mad : NUMERIC
+disposable_income_mad : NUMERIC
+household_expense_ratio : NUMERIC
+savings_to_monthly_income : NUMERIC
+
+============================================================
+TABLE : insurance
+============================================================
+sk_id_curr : BIGINT
+has_life_insurance : SMALLINT
+has_loan_protection_insurance : SMALLINT
+life_coverage_amount_mad : NUMERIC
+loan_protection_coverage_amount_mad : NUMERIC
+total_monthly_insurance_premium_mad : NUMERIC
+insurance_contract_status : VARCHAR(50)
+
+============================================================
+TABLE : repayments
+============================================================
+sk_id_instalment : BIGINT
+sk_id_curr : BIGINT
+instalment_number : INTEGER
+due_date : DATE
+payment_date : DATE
+amount_due_mad : NUMERIC
+amount_paid_mad : NUMERIC
+payment_delay_days : INTEGER
+is_late_payment : SMALLINT
+is_partial_payment : SMALLINT
