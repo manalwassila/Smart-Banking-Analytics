@@ -1,0 +1,90 @@
+{
+  "model": "LogisticRegression",
+  "purpose": "prototype d'aide à l'analyse du risque de défaut",
+  "synthetic_data": true,
+  "dataset_rows": 50000,
+  "feature_count": 22,
+  "positive_rate": 0.18876,
+  "train_rows": 40000,
+  "test_rows": 10000,
+  "split": {
+    "test_size": 0.2,
+    "random_state": 42,
+    "stratified": true
+  },
+  "cross_validation": {
+    "folds": 5,
+    "random_state": 44,
+    "selection_metric": "average_precision",
+    "best_mean_average_precision": 0.39718222738737985
+  },
+  "best_parameters": {
+    "classifier__C": 10
+  },
+  "calibration_selection_cv": {
+    "selection_metric": "lowest out-of-fold Brier score, with log loss as tie-breaker",
+    "results": {
+      "sigmoid": {
+        "brier_score": 0.1363147281102732,
+        "log_loss": 0.4364116566677065,
+        "average_precision": 0.3966335514833983
+      },
+      "isotonic": {
+        "brier_score": 0.13637114148527116,
+        "log_loss": 0.43659149358320193,
+        "average_precision": 0.3947789188930425
+      }
+    },
+    "selected_method": "sigmoid"
+  },
+  "threshold_selection": {
+    "method": "out-of-fold F2 maximization after sigmoid calibration on training rows",
+    "beta": 2,
+    "threshold": 0.11000000000000001,
+    "f2": 0.5549158775713623,
+    "precision": 0.23073350244739005
+  },
+  "threshold_profiles": {
+    "f2_max": 0.11000000000000001,
+    "capacity_10": 0.4000000000000001,
+    "capacity_20": 0.27,
+    "capacity_30": 0.19,
+    "capacity_40": 0.16000000000000003,
+    "capacity_50": 0.14,
+    "capacity_60": 0.13,
+    "capacity_70": 0.11000000000000001,
+    "capacity_80": 0.1
+  },
+  "test_metrics_at_selected_threshold": {
+    "threshold": 0.11000000000000001,
+    "threshold_profile": "f2_max",
+    "accuracy": 0.4395,
+    "precision": 0.233012498204281,
+    "recall": 0.8591101694915254,
+    "f1": 0.36659509549101593,
+    "f2": 0.5588093433473438,
+    "roc_auc": 0.7125599786255139,
+    "average_precision": 0.4044108474330027,
+    "brier_score": 0.13587493002698856,
+    "log_loss": 0.4345925418630421,
+    "alerts_count": 6961,
+    "alert_rate": 0.6961,
+    "confusion_matrix": {
+      "true_negative": 2773,
+      "false_positive": 5339,
+      "false_negative": 266,
+      "true_positive": 1622
+    }
+  },
+  "score_warning": "Le score est calibré uniquement sur la distribution synthétique du projet. Il n'est pas validé comme probabilité de défaut pour une population bancaire réelle.",
+  "limitations": [
+    "Le jeu est synthétique et ne permet pas d'estimer la performance sur une population bancaire réelle.",
+    "La classe prédite est une alerte analytique, pas une décision d'octroi ou de refus.",
+    "La calibration, l'équité et la validation temporelle restent à étudier."
+  ],
+  "versions": {
+    "scikit_learn": "1.9.1",
+    "pandas": "3.1.1"
+  },
+  "trained_at_utc": "2026-11-25T09:57:31.699330+00:00"
+}

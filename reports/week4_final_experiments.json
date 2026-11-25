@@ -1,0 +1,54 @@
+{
+  "n": 50000,
+  "target_rate": 0.18876,
+  "train_n": 30000,
+  "validation_n": 10000,
+  "test_n": 10000,
+  "results": {
+    "Logistic Regression": {
+      "cv_AP_mean": 0.40351751253335877,
+      "params": {
+        "clf__C": 10
+      },
+      "threshold": 0.36000000000000004,
+      "validation_F2": 0.5520527333954288,
+      "test_accuracy": 0.4884,
+      "test_precision": 0.24534553486904387,
+      "test_recall": 0.8236228813559322,
+      "test_F1": 0.37806953561876977,
+      "test_F2": 0.5597552195824333,
+      "test_ROC_AUC": 0.7127890282861966,
+      "test_AP": 0.4051399655979,
+      "confusion": {
+        "TN": 3329,
+        "FP": 4783,
+        "FN": 333,
+        "TP": 1555
+      },
+      "seconds": 1.7
+    },
+    "Random Forest": {
+      "cv_AP_mean": 0.38678959108705213,
+      "params": {
+        "clf__max_features": "sqrt",
+        "clf__min_samples_leaf": 8
+      },
+      "threshold": 0.18000000000000005,
+      "validation_F2": 0.5466876971608833,
+      "test_accuracy": 0.3323,
+      "test_precision": 0.20965199466472656,
+      "test_recall": 0.9157838983050848,
+      "test_F1": 0.34119388258510114,
+      "test_F2": 0.5471865307930882,
+      "test_ROC_AUC": 0.7007959802176311,
+      "test_AP": 0.39058977931620653,
+      "confusion": {
+        "TN": 1594,
+        "FP": 6518,
+        "FN": 159,
+        "TP": 1729
+      },
+      "seconds": 32.4
+    }
+  }
+}

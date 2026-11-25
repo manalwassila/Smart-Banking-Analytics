@@ -1,0 +1,53 @@
+{
+  "warning": "Coefficients are associations learned from synthetic data, not causal effects. Correlated financial ratios can share or amplify coefficients. One-hot indicators are regularized category terms and do not define a causal reference group.",
+  "test_alert_threshold": 0.11000000000000001,
+  "test_error_counts": {
+    "false_negative": 266,
+    "false_positive": 5339,
+    "true_negative": 2773,
+    "true_positive": 1622
+  },
+  "test_error_profiles": {
+    "false_negative": {
+      "count": 266,
+      "median_numeric_features": {
+        "DEBT_TO_INCOME_RATIO": 0.404,
+        "CREDIT_TO_ANNUAL_INCOME": 0.3298,
+        "PAYMENT_TO_INCOME_RATIO": 0.23835,
+        "MONTHLY_INCOME_MAD": 7244.5,
+        "DISPOSABLE_INCOME_MAD": 2849.5
+      }
+    },
+    "false_positive": {
+      "count": 5339,
+      "median_numeric_features": {
+        "DEBT_TO_INCOME_RATIO": 0.663,
+        "CREDIT_TO_ANNUAL_INCOME": 0.5493,
+        "PAYMENT_TO_INCOME_RATIO": 0.4591,
+        "MONTHLY_INCOME_MAD": 7121.0,
+        "DISPOSABLE_INCOME_MAD": 1862.0
+      }
+    },
+    "true_negative": {
+      "count": 2773,
+      "median_numeric_features": {
+        "DEBT_TO_INCOME_RATIO": 0.4014,
+        "CREDIT_TO_ANNUAL_INCOME": 0.3274,
+        "PAYMENT_TO_INCOME_RATIO": 0.2236,
+        "MONTHLY_INCOME_MAD": 7267.0,
+        "DISPOSABLE_INCOME_MAD": 2833.0
+      }
+    },
+    "true_positive": {
+      "count": 1622,
+      "median_numeric_features": {
+        "DEBT_TO_INCOME_RATIO": 2.5317,
+        "CREDIT_TO_ANNUAL_INCOME": 2.4758,
+        "PAYMENT_TO_INCOME_RATIO": 0.54125,
+        "MONTHLY_INCOME_MAD": 7098.0,
+        "DISPOSABLE_INCOME_MAD": 1766.0
+      }
+    }
+  },
+  "calibration_band_note": "Score bands summarize observed synthetic defaults. They do not establish calibration for real applicants or a future time period."
+}

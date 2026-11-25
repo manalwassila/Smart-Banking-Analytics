@@ -1,0 +1,30 @@
+transformed_feature,feature_family,coefficient_log_odds,odds_multiplier,direction,interpretation_unit
+DEBT_TO_INCOME_RATIO,numeric,3.3790675320333614,29.343396574994355,higher score,one training standard deviation
+CREDIT_TO_ANNUAL_INCOME,numeric,3.349624378853665,28.49202942477368,higher score,one training standard deviation
+INCOME_SOURCE_Aucun,categorical,0.4753153295042066,1.6085213317584304,higher score,one-hot category indicator
+CREDIT_TYPE_Immobilier,categorical,0.29540277030794343,1.3436674390616117,higher score,one-hot category indicator
+INCOME_SOURCE_Pension,categorical,-0.2902230742542367,0.7480966678574626,lower score,one-hot category indicator
+PAYMENT_TO_INCOME_RATIO,numeric,0.2859490116167316,1.3310245867302855,higher score,one training standard deviation
+EXISTING_DEBT_MAD,numeric,0.17809581012954,1.194939803087779,higher score,one training standard deviation
+CREDIT_TYPE_Trésorerie,categorical,-0.1566337399001636,0.8550171601463601,lower score,one-hot category indicator
+CREDIT_TYPE_Personnel,categorical,-0.12035543139889093,0.8866052533619787,lower score,one-hot category indicator
+INCOME_SOURCE_Salaire,categorical,-0.1147022290270007,0.891631606392351,lower score,one-hot category indicator
+INCOME_SOURCE_Activité indépendante,categorical,-0.08793542377618384,0.9158200150121061,lower score,one-hot category indicator
+CREDIT_TYPE_Équipement,categorical,-0.06879248055251884,0.9335203836131013,lower score,one-hot category indicator
+MONTHLY_FAMILY_EXPENSES_MAD,numeric,0.06728960343170652,1.0696051946599017,higher score,one training standard deviation
+CREDIT_TERM_MONTHS,numeric,0.06347568226171363,1.0655335741198206,higher score,one training standard deviation
+SAVINGS_TO_MONTHLY_INCOME,numeric,-0.06288188112229247,0.9390543871888363,lower score,one training standard deviation
+CREDIT_TYPE_Automobile,categorical,0.03283348399041006,1.0333784508579347,higher score,one-hot category indicator
+AMOUNT_REQUESTED_MAD,numeric,0.03198483270322904,1.0325018449244574,higher score,one training standard deviation
+DISPOSABLE_INCOME_MAD,numeric,-0.03064417299210166,0.9698206000497416,lower score,one training standard deviation
+ESTIMATED_MONTHLY_INSTALLMENT_MAD,numeric,0.03002982362216124,1.0304852662984645,higher score,one training standard deviation
+MONTHLY_INCOME_MAD,numeric,-0.02410138850235244,0.9761867306296864,lower score,one training standard deviation
+HOUSEHOLD_MONTHLY_INCOME_MAD,numeric,-0.023038802439873874,0.9772245643401974,lower score,one training standard deviation
+SAVINGS_MAD,numeric,-0.017930873856608884,0.9822289277093015,lower score,one training standard deviation
+MONTHLY_EXPENSES_MAD,numeric,-0.014463272571076572,0.9856408181207146,lower score,one training standard deviation
+TOTAL_MONTHLY_COMMITMENTS_MAD,numeric,-0.009415496989342359,0.9906286900128297,lower score,one training standard deviation
+INTEREST_RATE_ANNUAL_PCT,numeric,-0.006341625859846119,0.9936784398106957,lower score,one training standard deviation
+ADDITIONAL_MONTHLY_INCOME_MAD,numeric,0.005626808389182421,1.0056426686090256,higher score,one training standard deviation
+OTHER_MONTHLY_PAYMENTS_MAD,numeric,0.0055358020340629385,1.0055511528995216,higher score,one training standard deviation
+HOUSEHOLD_EXPENSE_RATIO,numeric,0.00408590222185394,1.0040942609007082,higher score,one training standard deviation
+AVG_ACCOUNT_BALANCE_MAD,numeric,2.677506852655993e-05,1.0000267754269818,higher score,one training standard deviation
