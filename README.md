@@ -12,7 +12,12 @@ installer les versions utilisées par le projet :
 ```powershell
 py -3.13 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\streamlit.exe run app.py
 ```
+
+L'interface s'ouvre dans le navigateur. Elle comprend une synthèse des
+performances, un audit descriptif par groupe et un formulaire pour scorer puis
+télécharger un lot CSV.
 
 Les données synthétiques sont déjà présentes dans `data/raw/`. Pour recréer les
 fichiers analytiques, puis entraîner le modèle et générer ses rapports :

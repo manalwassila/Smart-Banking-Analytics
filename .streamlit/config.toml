@@ -1,0 +1,21 @@
+[theme]
+showWidgetBorder = true
+showSidebarBorder = true
+baseRadius = "8px"
+buttonRadius = "8px"
+
+[theme.light]
+primaryColor = "#0F766E"
+backgroundColor = "#F8FAFC"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#102A43"
+borderColor = "#D8E2EA"
+chartCategoricalColors = ["#0F766E", "#2563EB", "#D97706", "#7C3AED", "#DC2626", "#0891B2"]
+
+[theme.dark]
+primaryColor = "#2DD4BF"
+backgroundColor = "#0B1220"
+secondaryBackgroundColor = "#111C2E"
+textColor = "#E5EDF5"
+borderColor = "#26364A"
+chartCategoricalColors = ["#2DD4BF", "#60A5FA", "#FBBF24", "#A78BFA", "#F87171", "#22D3EE"]
