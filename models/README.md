@@ -77,3 +77,22 @@ maximizing recall subject to each limit. Its output is based on training-only
 out-of-fold scores and is an aid to choosing a policy assumption, not an
 automated policy decision. Results are saved to
 `reports/threshold_capacity_scenarios.csv`.
+
+## Monitor an incoming batch
+
+Training writes a reference profile to
+`models/logistic_regression_reference_profile.json`. Compare a new feature-only
+CSV against it with:
+
+```powershell
+.\.venv\Scripts\python.exe src\monitor_credit_risk.py `
+  path\to\incoming_batch.csv `
+  reports\incoming_batch_drift.json `
+  --threshold-profile capacity_50
+```
+
+The report includes feature and score PSI, missingness, unknown categories, and
+the expected alert rate under the chosen threshold profile. It reports signals
+for review and does not automatically reject a batch or make a credit decision.
+The synthetic holdout demonstration is saved to
+`reports/synthetic_holdout_drift_monitoring.json`.

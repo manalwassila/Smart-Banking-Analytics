@@ -131,3 +131,14 @@ dans la cible synthétique.
   faux positifs et faux négatifs.
 
 Pour réentraîner ou régénérer les analyses, voir `models/README.md`.
+
+## Démonstration du suivi de dérive
+
+Le nouvel outil de suivi a comparé le lot de test synthétique (10 000 demandes)
+au profil hors pli des données d'entraînement. Le PSI du score est de 0,00017;
+le PSI le plus élevé parmi les variables est 0,00219 pour
+`HOUSEHOLD_EXPENSE_RATIO`. Le lot ne contenait ni valeurs manquantes ni
+catégories inconnues. Avec le profil de capacité `capacity_50`, le taux d'alerte
+observé dans ce lot est de 47,18 %. Comme les deux lots proviennent du même
+générateur synthétique, ce résultat démontre le fonctionnement du suivi sur un
+lot comparable; il ne prouve pas la stabilité sur de nouvelles données réelles.

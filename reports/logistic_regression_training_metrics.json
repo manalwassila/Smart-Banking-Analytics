@@ -55,6 +55,7 @@
     "capacity_70": 0.11000000000000001,
     "capacity_80": 0.1
   },
+  "reference_profile": "models\\logistic_regression_reference_profile.json",
   "test_metrics_at_selected_threshold": {
     "threshold": 0.11000000000000001,
     "threshold_profile": "f2_max",
@@ -86,5 +87,5 @@
     "scikit_learn": "1.9.1",
     "pandas": "3.1.1"
   },
-  "trained_at_utc": "2026-11-25T09:57:31.699330+00:00"
+  "trained_at_utc": "2026-11-25T10:10:02.066473+00:00"
 }

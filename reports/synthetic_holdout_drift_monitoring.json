@@ -1,0 +1,194 @@
+{
+  "batch_rows": 10000,
+  "reference_rows": 40000,
+  "threshold_profile": "capacity_50",
+  "threshold": 0.14,
+  "score_distribution": {
+    "reference_oof_mean": 0.18878627520730623,
+    "reference_oof_median": 0.13558140644124406,
+    "batch_mean": 0.1880328032422156,
+    "batch_median": 0.1352544050055985,
+    "batch_alert_rate": 0.4718,
+    "psi": 0.00017394562343942801
+  },
+  "features_by_psi_descending": [
+    {
+      "feature": "HOUSEHOLD_EXPENSE_RATIO",
+      "type": "numeric",
+      "psi": 0.0021942146545758843,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "EXISTING_DEBT_MAD",
+      "type": "numeric",
+      "psi": 0.0019941878928497973,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "AVG_ACCOUNT_BALANCE_MAD",
+      "type": "numeric",
+      "psi": 0.0012525773639575565,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "AMOUNT_REQUESTED_MAD",
+      "type": "numeric",
+      "psi": 0.0012480366531106297,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "ESTIMATED_MONTHLY_INSTALLMENT_MAD",
+      "type": "numeric",
+      "psi": 0.0011832561250044683,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "MONTHLY_INCOME_MAD",
+      "type": "numeric",
+      "psi": 0.0011177341471714632,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "CREDIT_TO_ANNUAL_INCOME",
+      "type": "numeric",
+      "psi": 0.001103619859916476,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "TOTAL_MONTHLY_COMMITMENTS_MAD",
+      "type": "numeric",
+      "psi": 0.0009914070105231563,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "PAYMENT_TO_INCOME_RATIO",
+      "type": "numeric",
+      "psi": 0.0009400151571086821,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "CREDIT_TERM_MONTHS",
+      "type": "numeric",
+      "psi": 0.000859990910255802,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "ADDITIONAL_MONTHLY_INCOME_MAD",
+      "type": "numeric",
+      "psi": 0.0008493983169543796,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "HOUSEHOLD_MONTHLY_INCOME_MAD",
+      "type": "numeric",
+      "psi": 0.0007753184492844858,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "SAVINGS_TO_MONTHLY_INCOME",
+      "type": "numeric",
+      "psi": 0.0007304669970172376,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "DISPOSABLE_INCOME_MAD",
+      "type": "numeric",
+      "psi": 0.0006899348149444014,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "MONTHLY_FAMILY_EXPENSES_MAD",
+      "type": "numeric",
+      "psi": 0.0006382911985420159,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "INTEREST_RATE_ANNUAL_PCT",
+      "type": "numeric",
+      "psi": 0.000603121501377432,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "CREDIT_TYPE",
+      "type": "categorical",
+      "psi": 0.0005773326839859463,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": 0.0
+    },
+    {
+      "feature": "DEBT_TO_INCOME_RATIO",
+      "type": "numeric",
+      "psi": 0.000559873802202329,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "MONTHLY_EXPENSES_MAD",
+      "type": "numeric",
+      "psi": 0.000532334330837057,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "OTHER_MONTHLY_PAYMENTS_MAD",
+      "type": "numeric",
+      "psi": 0.0004797566221537733,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "SAVINGS_MAD",
+      "type": "numeric",
+      "psi": 0.000442115602158323,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": null
+    },
+    {
+      "feature": "INCOME_SOURCE",
+      "type": "categorical",
+      "psi": 0.0002930266070128897,
+      "reference_missing_rate": 0.0,
+      "batch_missing_rate": 0.0,
+      "unknown_category_rate": 0.0
+    }
+  ],
+  "interpretation": "PSI, missingness, and unknown-category rates are monitoring signals only. No automatic drift threshold or business action is applied. Review changes with the data owner and, when labels arrive, monitor predictive performance separately.",
+  "synthetic_reference": true
+}

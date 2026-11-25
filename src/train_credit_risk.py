@@ -42,6 +42,7 @@ MODEL_PATH = ROOT / "models" / "logistic_regression_credit_risk.joblib"
 METRICS_PATH = ROOT / "reports" / "logistic_regression_training_metrics.json"
 PREDICTIONS_PATH = ROOT / "reports" / "logistic_regression_test_predictions.csv"
 THRESHOLD_PATH = ROOT / "reports" / "logistic_regression_threshold_sensitivity.csv"
+PROFILE_PATH = ROOT / "models" / "logistic_regression_reference_profile.json"
 
 TEST_SIZE = 0.20
 RANDOM_STATE_SPLIT = 42
@@ -139,6 +140,47 @@ def capacity_thresholds(sensitivity: pd.DataFrame) -> dict[str, float]:
     return profiles
 
 
+def make_reference_profile(features: pd.DataFrame, oof_scores: np.ndarray) -> dict:
+    profile = {"reference_rows": int(len(features)), "features": {}, "score": {}}
+    categorical = set(features.select_dtypes(include=["object", "str"]).columns)
+
+    for column in features.columns:
+        series = features[column]
+        if column in categorical:
+            values = series.astype("string")
+            categories = sorted(str(value) for value in values.dropna().unique())
+            counts = [int((values == category).sum()) for category in categories]
+            counts.append(int(values.isna().sum()))
+            profile["features"][column] = {
+                "type": "categorical",
+                "categories": categories,
+                "counts": counts,
+                "missing_count": int(values.isna().sum()),
+            }
+        else:
+            values = pd.to_numeric(series, errors="coerce").to_numpy(dtype=float)
+            finite = values[np.isfinite(values)]
+            cuts = np.unique(np.quantile(finite, np.arange(0.1, 1.0, 0.1))).tolist() if len(finite) else []
+            counts = np.histogram(finite, bins=[-np.inf, *cuts, np.inf])[0].astype(int).tolist()
+            counts.append(int(len(values) - len(finite)))
+            profile["features"][column] = {
+                "type": "numeric",
+                "quantile_edges": [float(value) for value in cuts],
+                "counts": counts,
+                "missing_count": int(len(values) - len(finite)),
+            }
+
+    score_cuts = np.unique(np.quantile(oof_scores, np.arange(0.1, 1.0, 0.1))).tolist()
+    score_counts = np.histogram(oof_scores, bins=[-np.inf, *score_cuts, np.inf])[0].astype(int).tolist()
+    profile["score"] = {
+        "quantile_edges": [float(value) for value in score_cuts],
+        "counts": score_counts,
+        "mean": float(np.mean(oof_scores)),
+        "median": float(np.median(oof_scores)),
+    }
+    return profile
+
+
 def main() -> None:
     features = pd.read_csv(FEATURES_PATH)
     target_frame = pd.read_csv(TARGET_PATH)
@@ -206,6 +248,7 @@ def main() -> None:
     sensitivity = threshold_sensitivity(y_train, oof_scores)
     sensitivity.to_csv(THRESHOLD_PATH, index=False)
     profiles = {"f2_max": threshold, **capacity_thresholds(sensitivity)}
+    reference_profile = make_reference_profile(x_train, oof_scores)
 
     model = CalibratedClassifierCV(
         estimator=search.best_estimator_,
@@ -246,6 +289,7 @@ def main() -> None:
             **operating_point,
         },
         "threshold_profiles": profiles,
+        "reference_profile": str(PROFILE_PATH.relative_to(ROOT)),
         "test_metrics_at_selected_threshold": {
             "threshold": threshold,
             "threshold_profile": "f2_max",
@@ -287,6 +331,7 @@ def main() -> None:
         MODEL_PATH,
     )
     METRICS_PATH.write_text(json.dumps(metrics, ensure_ascii=False, indent=2), encoding="utf-8")
+    PROFILE_PATH.write_text(json.dumps(reference_profile, ensure_ascii=False, indent=2), encoding="utf-8")
 
     pd.DataFrame(
         {
@@ -304,6 +349,7 @@ def main() -> None:
     print(f"Métriques : {METRICS_PATH}")
     print(f"Prédictions test : {PREDICTIONS_PATH}")
     print(f"Seuils évalués sur l'entraînement : {THRESHOLD_PATH}")
+    print(f"Profil de référence dérive : {PROFILE_PATH}")
 
 
 if __name__ == "__main__":
