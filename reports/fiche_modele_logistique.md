@@ -142,3 +142,26 @@ catégories inconnues. Avec le profil de capacité `capacity_50`, le taux d'aler
 observé dans ce lot est de 47,18 %. Comme les deux lots proviennent du même
 générateur synthétique, ce résultat démontre le fonctionnement du suivi sur un
 lot comparable; il ne prouve pas la stabilité sur de nouvelles données réelles.
+
+## Comparaison descriptive entre groupes
+
+Un contrôle exploratoire supplémentaire compare les alertes et les erreurs du
+jeu de test par groupe de clients. Pour le seuil `f2_max` (0,11), le taux de
+fausses alertes varie de 44,1 % à 100 % entre les situations professionnelles
+et de 57,8 % à 81,9 % entre les niveaux de responsabilité familiale. Ces écarts
+sont calculés sur les données synthétiques du projet; ils ne constituent ni un
+test statistique ni une mesure d'équité applicable à une banque réelle. Les
+écarts de défauts générés par le dataset et les faibles effectifs de certaines
+catégories influencent ces résultats.
+
+Le tableau donne aussi le Brier score par groupe et la différence entre le score
+moyen et le taux de défaut synthétique observé. Pour la situation professionnelle,
+la plus grande différence absolue de score moyen est de 2,31 points de
+pourcentage. Cette moyenne agrégée ne démontre pas que les scores sont calibrés
+au niveau individuel ou sur une population future.
+
+Le rapport détaille également les taux d'alerte, la précision et le rappel par
+groupe. Les catégories de moins de 30 dossiers sont signalées et exclues des
+résumés d'écarts. Avant tout usage décisionnel, ces résultats exigeraient des
+données représentatives, une analyse métier et juridique, ainsi qu'une méthode
+de validation adaptée; le prototype ne prend aucune décision d'octroi.

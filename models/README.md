@@ -24,12 +24,17 @@ partition. Preprocessing is fitted inside each fold.
 
 ## Score a CSV
 
-The input CSV must contain exactly the 22 predictor columns in
-`data/processed/X_candidate.csv`, in any order. It must not contain TARGET,
-TARGET_LABEL, or synthetic decision-scenario outputs.
+The input CSV must contain the 22 predictor columns in
+`data/processed/X_candidate.csv`, in any order. To retain an application key
+in the output, pass its column name with `--id-column`; that column is excluded
+from the model and copied into the score file. Without an ID, the output still
+contains `ligne_source`, a zero-based row index for matching scores to input.
+The input must not contain TARGET, TARGET_LABEL, or synthetic decision-scenario
+outputs.
 
 ```powershell
 .\.venv\Scripts\python.exe src\predict_credit_risk.py `
+  --id-column SK_ID_CURR `
   data\processed\X_candidate.csv `
   reports\scored_applications.csv
 ```
@@ -96,3 +101,21 @@ the expected alert rate under the chosen threshold profile. It reports signals
 for review and does not automatically reject a batch or make a credit decision.
 The synthetic holdout demonstration is saved to
 `reports/synthetic_holdout_drift_monitoring.json`.
+
+## Compare alerts across client groups
+
+Run a descriptive group analysis on the held-out synthetic test rows:
+
+```powershell
+.\.venv\Scripts\python.exe src\analyze_group_fairness.py
+```
+
+The CSV report compares synthetic default rates, mean scores, Brier score, alert
+rate, precision, default recall, and false-alert rate by gender, age band,
+education, employment, marital status, and family responsibility. The JSON file
+adds between-group rate ranges and the largest within-group difference between
+mean score and observed synthetic default rate. These summaries are descriptive,
+not statistical significance tests.
+You can select a review-capacity profile with `--threshold-profile capacity_50`.
+The results are descriptive checks on synthetic data, not a legal fairness
+assessment or evidence that the model is appropriate for credit decisions.

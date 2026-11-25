@@ -1,0 +1,430 @@
+{
+  "synthetic_data": true,
+  "test_rows": 10000,
+  "threshold_profile": "f2_max",
+  "threshold": 0.11000000000000001,
+  "minimum_group_size_for_interpretation": 30,
+  "observed_group_rate_gaps": {
+    "genre": {
+      "taux_defaut_synthetique": {
+        "label": "Taux de défaut observé",
+        "groups_compared": 2,
+        "minimum_group": "F",
+        "minimum_rate": 0.18729166666666666,
+        "maximum_group": "M",
+        "maximum_rate": 0.1901923076923077,
+        "absolute_gap_percentage_points": 0.29006410256410264
+      },
+      "score_moyen_synthetique": {
+        "label": "Score moyen synthétique",
+        "groups_compared": 2,
+        "minimum_group": "M",
+        "minimum_rate": 0.18703986079164012,
+        "maximum_group": "F",
+        "maximum_rate": 0.18910849089700568,
+        "absolute_gap_percentage_points": 0.20686301053655654
+      },
+      "brier_score_synthetique": {
+        "label": "Brier score synthétique",
+        "groups_compared": 2,
+        "minimum_group": "F",
+        "minimum_rate": 0.1357766724232775,
+        "maximum_group": "M",
+        "maximum_rate": 0.13596562935349107,
+        "absolute_gap_percentage_points": 0.018895693021356297
+      },
+      "taux_alerte": {
+        "label": "Taux d'alerte",
+        "groups_compared": 2,
+        "minimum_group": "M",
+        "minimum_rate": 0.6923076923076923,
+        "maximum_group": "F",
+        "maximum_rate": 0.7002083333333333,
+        "absolute_gap_percentage_points": 0.7900641025641031
+      },
+      "precision_alerte": {
+        "label": "Précision des alertes",
+        "groups_compared": 2,
+        "minimum_group": "F",
+        "minimum_rate": 0.23088366557572151,
+        "maximum_group": "M",
+        "maximum_rate": 0.235,
+        "absolute_gap_percentage_points": 0.4116334424278473
+      },
+      "rappel_defaut": {
+        "label": "Rappel des défauts synthétiques",
+        "groups_compared": 2,
+        "minimum_group": "M",
+        "minimum_rate": 0.8554095045500506,
+        "maximum_group": "F",
+        "maximum_rate": 0.8631813125695217,
+        "absolute_gap_percentage_points": 0.7771808019471083
+      },
+      "taux_fausses_alertes": {
+        "label": "Taux de fausses alertes",
+        "groups_compared": 2,
+        "minimum_group": "M",
+        "minimum_rate": 0.6540014248397056,
+        "maximum_group": "F",
+        "maximum_rate": 0.6626506024096386,
+        "absolute_gap_percentage_points": 0.8649177569932998
+      },
+      "absolute_group_calibration_gap": {
+        "label": "Plus grand écart absolu entre score moyen et taux de défaut observé",
+        "group": "M",
+        "absolute_gap_percentage_points": 0.31524469006675715
+      }
+    },
+    "niveau_etudes": {
+      "taux_defaut_synthetique": {
+        "label": "Taux de défaut observé",
+        "groups_compared": 7,
+        "minimum_group": "Lycée",
+        "minimum_rate": 0.17858790955237655,
+        "maximum_group": "Bac+2",
+        "maximum_rate": 0.20072802912116486,
+        "absolute_gap_percentage_points": 2.2140119568788306
+      },
+      "score_moyen_synthetique": {
+        "label": "Score moyen synthétique",
+        "groups_compared": 7,
+        "minimum_group": "Bac+2",
+        "minimum_rate": 0.18248468727504547,
+        "maximum_group": "Doctorat",
+        "maximum_rate": 0.19889571592232258,
+        "absolute_gap_percentage_points": 1.6411028647277115
+      },
+      "brier_score_synthetique": {
+        "label": "Brier score synthétique",
+        "groups_compared": 7,
+        "minimum_group": "Primaire",
+        "minimum_rate": 0.12930690732523692,
+        "maximum_group": "Bac+2",
+        "maximum_rate": 0.14353337544371111,
+        "absolute_gap_percentage_points": 1.4226468118474194
+      },
+      "taux_alerte": {
+        "label": "Taux d'alerte",
+        "groups_compared": 7,
+        "minimum_group": "Bac+2",
+        "minimum_rate": 0.6734269370774831,
+        "maximum_group": "Doctorat",
+        "maximum_rate": 0.7301038062283737,
+        "absolute_gap_percentage_points": 5.667686915089054
+      },
+      "precision_alerte": {
+        "label": "Précision des alertes",
+        "groups_compared": 7,
+        "minimum_group": "Lycée",
+        "minimum_rate": 0.21471571906354514,
+        "maximum_group": "Doctorat",
+        "maximum_rate": 0.27014218009478674,
+        "absolute_gap_percentage_points": 5.54264610312416
+      },
+      "rappel_defaut": {
+        "label": "Rappel des défauts synthétiques",
+        "groups_compared": 7,
+        "minimum_group": "Lycée",
+        "minimum_rate": 0.8294573643410853,
+        "maximum_group": "Doctorat",
+        "maximum_rate": 0.9827586206896551,
+        "absolute_gap_percentage_points": 15.330125634856984
+      },
+      "taux_fausses_alertes": {
+        "label": "Taux de fausses alertes",
+        "groups_compared": 7,
+        "minimum_group": "Bac+2",
+        "minimum_rate": 0.631099544567339,
+        "maximum_group": "Collège",
+        "maximum_rate": 0.6694610778443114,
+        "absolute_gap_percentage_points": 3.836153327697245
+      },
+      "absolute_group_calibration_gap": {
+        "label": "Plus grand écart absolu entre score moyen et taux de défaut observé",
+        "group": "Bac+2",
+        "absolute_gap_percentage_points": 1.8243341846119394
+      }
+    },
+    "responsabilite_familiale": {
+      "taux_defaut_synthetique": {
+        "label": "Taux de défaut observé",
+        "groups_compared": 4,
+        "minimum_group": "Aucune",
+        "minimum_rate": 0.17472266244057053,
+        "maximum_group": "Élevée",
+        "maximum_rate": 0.21038961038961038,
+        "absolute_gap_percentage_points": 3.5666947949039853
+      },
+      "score_moyen_synthetique": {
+        "label": "Score moyen synthétique",
+        "groups_compared": 4,
+        "minimum_group": "Aucune",
+        "minimum_rate": 0.17517501912848757,
+        "maximum_group": "Élevée",
+        "maximum_rate": 0.21938800159580743,
+        "absolute_gap_percentage_points": 4.421298246731986
+      },
+      "brier_score_synthetique": {
+        "label": "Brier score synthétique",
+        "groups_compared": 4,
+        "minimum_group": "Aucune",
+        "minimum_rate": 0.127425130365968,
+        "maximum_group": "Élevée",
+        "maximum_rate": 0.14310477614693623,
+        "absolute_gap_percentage_points": 1.5679645780968228
+      },
+      "taux_alerte": {
+        "label": "Taux d'alerte",
+        "groups_compared": 4,
+        "minimum_group": "Aucune",
+        "minimum_rate": 0.6251980982567353,
+        "maximum_group": "Élevée",
+        "maximum_rate": 0.8389610389610389,
+        "absolute_gap_percentage_points": 21.376294070430358
+      },
+      "precision_alerte": {
+        "label": "Précision des alertes",
+        "groups_compared": 4,
+        "minimum_group": "Élevée",
+        "minimum_rate": 0.22910216718266255,
+        "maximum_group": "Modérée",
+        "maximum_rate": 0.23727810650887574,
+        "absolute_gap_percentage_points": 0.8175939326213189
+      },
+      "rappel_defaut": {
+        "label": "Rappel des défauts synthétiques",
+        "groups_compared": 4,
+        "minimum_group": "Faible",
+        "minimum_rate": 0.8376623376623377,
+        "maximum_group": "Élevée",
+        "maximum_rate": 0.9135802469135802,
+        "absolute_gap_percentage_points": 7.591790925124253
+      },
+      "taux_fausses_alertes": {
+        "label": "Taux de fausses alertes",
+        "groups_compared": 4,
+        "minimum_group": "Aucune",
+        "minimum_rate": 0.5784925588094095,
+        "maximum_group": "Élevée",
+        "maximum_rate": 0.819078947368421,
+        "absolute_gap_percentage_points": 24.058638855901147
+      },
+      "absolute_group_calibration_gap": {
+        "label": "Plus grand écart absolu entre score moyen et taux de défaut observé",
+        "group": "Élevée",
+        "absolute_gap_percentage_points": 0.8998391206197054
+      }
+    },
+    "situation_matrimoniale": {
+      "taux_defaut_synthetique": {
+        "label": "Taux de défaut observé",
+        "groups_compared": 4,
+        "minimum_group": "Célibataire",
+        "minimum_rate": 0.1882716049382716,
+        "maximum_group": "Veuf/Veuve",
+        "maximum_rate": 0.20098039215686275,
+        "absolute_gap_percentage_points": 1.2708787218591144
+      },
+      "score_moyen_synthetique": {
+        "label": "Score moyen synthétique",
+        "groups_compared": 4,
+        "minimum_group": "Veuf/Veuve",
+        "minimum_rate": 0.1815533689391273,
+        "maximum_group": "Célibataire",
+        "maximum_rate": 0.1889763332330113,
+        "absolute_gap_percentage_points": 0.7422964293884005
+      },
+      "brier_score_synthetique": {
+        "label": "Brier score synthétique",
+        "groups_compared": 4,
+        "minimum_group": "Divorcé(e)",
+        "minimum_rate": 0.1262727617209788,
+        "maximum_group": "Marié(e)",
+        "maximum_rate": 0.13810503710855604,
+        "absolute_gap_percentage_points": 1.1832275387577251
+      },
+      "taux_alerte": {
+        "label": "Taux d'alerte",
+        "groups_compared": 4,
+        "minimum_group": "Veuf/Veuve",
+        "minimum_rate": 0.6764705882352942,
+        "maximum_group": "Divorcé(e)",
+        "maximum_rate": 0.7070422535211267,
+        "absolute_gap_percentage_points": 3.057166528583255
+      },
+      "precision_alerte": {
+        "label": "Précision des alertes",
+        "groups_compared": 4,
+        "minimum_group": "Célibataire",
+        "minimum_rate": 0.23116779593463532,
+        "maximum_group": "Veuf/Veuve",
+        "maximum_rate": 0.2536231884057971,
+        "absolute_gap_percentage_points": 2.2455392471161795
+      },
+      "rappel_defaut": {
+        "label": "Rappel des défauts synthétiques",
+        "groups_compared": 4,
+        "minimum_group": "Marié(e)",
+        "minimum_rate": 0.8482228626320846,
+        "maximum_group": "Divorcé(e)",
+        "maximum_rate": 0.9185185185185185,
+        "absolute_gap_percentage_points": 7.029565588643393
+      },
+      "taux_fausses_alertes": {
+        "label": "Taux de fausses alertes",
+        "groups_compared": 4,
+        "minimum_group": "Veuf/Veuve",
+        "minimum_rate": 0.6319018404907976,
+        "maximum_group": "Célibataire",
+        "maximum_rate": 0.6667818873142067,
+        "absolute_gap_percentage_points": 3.488004682340917
+      },
+      "absolute_group_calibration_gap": {
+        "label": "Plus grand écart absolu entre score moyen et taux de défaut observé",
+        "group": "Veuf/Veuve",
+        "absolute_gap_percentage_points": 1.9427023217735457
+      }
+    },
+    "situation_professionnelle": {
+      "taux_defaut_synthetique": {
+        "label": "Taux de défaut observé",
+        "groups_compared": 7,
+        "minimum_group": "Retraité",
+        "minimum_rate": 0.1282051282051282,
+        "maximum_group": "Sans emploi",
+        "maximum_rate": 0.3158660844250364,
+        "absolute_gap_percentage_points": 18.766095621990818
+      },
+      "score_moyen_synthetique": {
+        "label": "Score moyen synthétique",
+        "groups_compared": 7,
+        "minimum_group": "Retraité",
+        "minimum_rate": 0.14524633542597798,
+        "maximum_group": "Sans emploi",
+        "maximum_rate": 0.29405358527258796,
+        "absolute_gap_percentage_points": 14.880724984660997
+      },
+      "brier_score_synthetique": {
+        "label": "Brier score synthétique",
+        "groups_compared": 7,
+        "minimum_group": "Retraité",
+        "minimum_rate": 0.10693409667307091,
+        "maximum_group": "Sans emploi",
+        "maximum_rate": 0.19374340592805456,
+        "absolute_gap_percentage_points": 8.680930925498364
+      },
+      "taux_alerte": {
+        "label": "Taux d'alerte",
+        "groups_compared": 7,
+        "minimum_group": "Retraité",
+        "minimum_rate": 0.4652014652014652,
+        "maximum_group": "Sans emploi",
+        "maximum_rate": 1.0,
+        "absolute_gap_percentage_points": 53.47985347985348
+      },
+      "precision_alerte": {
+        "label": "Précision des alertes",
+        "groups_compared": 7,
+        "minimum_group": "Retraité",
+        "minimum_rate": 0.1732283464566929,
+        "maximum_group": "Sans emploi",
+        "maximum_rate": 0.3158660844250364,
+        "absolute_gap_percentage_points": 14.263773796834348
+      },
+      "rappel_defaut": {
+        "label": "Rappel des défauts synthétiques",
+        "groups_compared": 7,
+        "minimum_group": "Retraité",
+        "minimum_rate": 0.6285714285714286,
+        "maximum_group": "Sans emploi",
+        "maximum_rate": 1.0,
+        "absolute_gap_percentage_points": 37.142857142857146
+      },
+      "taux_fausses_alertes": {
+        "label": "Taux de fausses alertes",
+        "groups_compared": 7,
+        "minimum_group": "Retraité",
+        "minimum_rate": 0.4411764705882353,
+        "maximum_group": "Sans emploi",
+        "maximum_rate": 1.0,
+        "absolute_gap_percentage_points": 55.88235294117647
+      },
+      "absolute_group_calibration_gap": {
+        "label": "Plus grand écart absolu entre score moyen et taux de défaut observé",
+        "group": "Fonctionnaire",
+        "absolute_gap_percentage_points": 2.3103378869010873
+      }
+    },
+    "tranche_age": {
+      "taux_defaut_synthetique": {
+        "label": "Taux de défaut observé",
+        "groups_compared": 5,
+        "minimum_group": "56-65",
+        "minimum_rate": 0.15902964959568733,
+        "maximum_group": "18-25",
+        "maximum_rate": 0.23404255319148937,
+        "absolute_gap_percentage_points": 7.501290359580204
+      },
+      "score_moyen_synthetique": {
+        "label": "Score moyen synthétique",
+        "groups_compared": 5,
+        "minimum_group": "56-65",
+        "minimum_rate": 0.17868551755242568,
+        "maximum_group": "18-25",
+        "maximum_rate": 0.18988091306763238,
+        "absolute_gap_percentage_points": 1.1195395515206708
+      },
+      "brier_score_synthetique": {
+        "label": "Brier score synthétique",
+        "groups_compared": 5,
+        "minimum_group": "56-65",
+        "minimum_rate": 0.12444163113894534,
+        "maximum_group": "18-25",
+        "maximum_rate": 0.16242327759351574,
+        "absolute_gap_percentage_points": 3.79816464545704
+      },
+      "taux_alerte": {
+        "label": "Taux d'alerte",
+        "groups_compared": 5,
+        "minimum_group": "36-45",
+        "minimum_rate": 0.6876180199622336,
+        "maximum_group": "18-25",
+        "maximum_rate": 0.7095282146160962,
+        "absolute_gap_percentage_points": 2.191019465386257
+      },
+      "precision_alerte": {
+        "label": "Précision des alertes",
+        "groups_compared": 5,
+        "minimum_group": "56-65",
+        "minimum_rate": 0.17624521072796934,
+        "maximum_group": "18-25",
+        "maximum_rate": 0.28292046936114734,
+        "absolute_gap_percentage_points": 10.6675258633178
+      },
+      "rappel_defaut": {
+        "label": "Rappel des défauts synthétiques",
+        "groups_compared": 5,
+        "minimum_group": "56-65",
+        "minimum_rate": 0.7796610169491526,
+        "maximum_group": "26-35",
+        "maximum_rate": 0.8773584905660378,
+        "absolute_gap_percentage_points": 9.76974736168852
+      },
+      "taux_fausses_alertes": {
+        "label": "Taux de fausses alertes",
+        "groups_compared": 5,
+        "minimum_group": "36-45",
+        "minimum_rate": 0.65,
+        "maximum_group": "56-65",
+        "maximum_rate": 0.6891025641025641,
+        "absolute_gap_percentage_points": 3.9102564102564075
+      },
+      "absolute_group_calibration_gap": {
+        "label": "Plus grand écart absolu entre score moyen et taux de défaut observé",
+        "group": "18-25",
+        "absolute_gap_percentage_points": 4.416164012385698
+      }
+    }
+  },
+  "warning": "Descriptive group comparisons on synthetic test data only. Gap summaries omit groups with fewer than the stated minimum rows. They are not statistical significance tests, legal fairness thresholds, or evidence of suitability for credit decisions."
+}

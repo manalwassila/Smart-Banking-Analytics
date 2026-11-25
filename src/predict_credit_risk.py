@@ -20,6 +20,10 @@ def main() -> None:
     parser.add_argument("output_csv", type=Path, help="Chemin du CSV de scores")
     parser.add_argument("--model", type=Path, default=DEFAULT_MODEL, help="Bundle joblib entraîné")
     parser.add_argument(
+        "--id-column",
+        help="Colonne facultative identifiant les dossiers; elle est conservée en sortie, jamais utilisée par le modèle",
+    )
+    parser.add_argument(
         "--threshold-profile",
         default="f2_max",
         help="Profil de seuil (f2_max ou capacity_10 à capacity_80)",
@@ -28,13 +32,21 @@ def main() -> None:
 
     bundle = joblib.load(args.model)
     rows = pd.read_csv(args.input_csv)
+    if rows.empty:
+        raise ValueError("Le fichier d'entrée ne contient aucune ligne à scorer.")
+
     leaked = sorted(FORBIDDEN_COLUMNS.intersection(rows.columns))
     if leaked:
         raise ValueError(f"Le fichier d'entrée contient des colonnes de cible/décision interdites : {leaked}")
 
     expected = bundle["feature_names"]
-    missing = [column for column in expected if column not in rows.columns]
-    extra = [column for column in rows.columns if column not in expected]
+    if args.id_column and args.id_column not in rows.columns:
+        raise ValueError(f"La colonne identifiant '{args.id_column}' est absente du fichier d'entrée.")
+    if args.id_column in expected:
+        raise ValueError("La colonne identifiant ne peut pas être une variable explicative du modèle.")
+    model_columns = [column for column in rows.columns if column != args.id_column]
+    missing = [column for column in expected if column not in model_columns]
+    extra = [column for column in model_columns if column not in expected]
     if missing or extra:
         raise ValueError(f"Schéma incorrect. Colonnes manquantes: {missing}; colonnes inattendues: {extra}")
 
@@ -45,12 +57,15 @@ def main() -> None:
     threshold = float(profiles[args.threshold_profile])
     output = pd.DataFrame(
         {
+            "ligne_source": range(len(rows)),
             "score_defaut_calibre_synthetique": scores,
             "seuil_alerte": threshold,
             "profil_seuil": args.threshold_profile,
             "alerte_defaut": (scores >= threshold).astype("int8"),
         }
     )
+    if args.id_column:
+        output.insert(0, args.id_column, rows[args.id_column].to_numpy())
     args.output_csv.parent.mkdir(parents=True, exist_ok=True)
     output.to_csv(args.output_csv, index=False)
     print(f"{len(output)} lignes scorées. Sortie : {args.output_csv}")
